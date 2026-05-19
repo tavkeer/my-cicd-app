@@ -10,7 +10,7 @@ pipeline {
         ECR_REGISTRY       = "494003776090.dkr.ecr.ap-south-1.amazonaws.com"
         FULL_IMAGE_NAME    = "494003776090.dkr.ecr.ap-south-1.amazonaws.com/my-cicd-app:${BUILD_NUMBER}"
         AWS_CREDENTIALS_ID = "aws-credentials"
-        DEPLOY_SERVER_IP   = "43.204.140.75"
+        DEPLOY_SERVER_IP   = "3.110.141.223"
     }
 
     stages {
