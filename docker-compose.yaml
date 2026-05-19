@@ -1,7 +1,17 @@
+version: '3.8'
+
 services:
   app:
-    build: .
+
+    # ── IMAGE ──────────────────────────────────────────────────────────────
+    # Instead of "build: ." we use a pre-built image from ECR.
+    # These variables are injected by Jenkins during the Deploy stage via SSH.
+    # ${ECR_REGISTRY}/${ECR_REPO_NAME}:${IMAGE_TAG} resolves to something like:
+    # 123456789012.dkr.ecr.ap-south-1.amazonaws.com/my-cicd-app:42
+    image: ${ECR_REGISTRY}/${ECR_REPO_NAME}:${IMAGE_TAG}
+
     container_name: my-cicd-app
+
     ports:
       - "3000:3000"
 
