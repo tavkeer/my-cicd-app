@@ -57,7 +57,7 @@ pipeline {
                     sh """
                         ssh -o StrictHostKeyChecking=no \
                             -i /var/jenkins_home/.ssh/jenkins_deploy_key \
-                            ubuntu@43.204.140.75 '
+                            ubuntu@13.204.53.118 '
 
                             export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
                             export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
