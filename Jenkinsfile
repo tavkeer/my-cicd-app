@@ -57,7 +57,6 @@ pipeline {
                 ]]) {
                     sh """
                         ssh -o StrictHostKeyChecking=no \
-                            -i /var/jenkins_home/.ssh/jenkins_deploy_key \
                             ubuntu@${DEPLOY_SERVER_IP}  '
 
                             export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
