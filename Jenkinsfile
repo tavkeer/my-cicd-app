@@ -56,8 +56,7 @@ pipeline {
                     credentialsId: "aws-credentials"
                 ]]) {
                     sh """
-                        ssh -o StrictHostKeyChecking=no \
-                            ubuntu@${DEPLOY_SERVER_IP}  '
+                        ssh ubuntu@${DEPLOY_SERVER_IP}  '
 
                             export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
                             export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
