@@ -14,7 +14,6 @@ pipeline {
         DEPLOY_SERVER_IP   = "65.2.34.3"
     }
 
-
     stages {
 
         stage('Checkout') {
