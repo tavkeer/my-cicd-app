@@ -10,7 +10,7 @@ pipeline {
         ECR_REGISTRY       = "494003776090.dkr.ecr.ap-south-1.amazonaws.com"
         FULL_IMAGE_NAME    = "494003776090.dkr.ecr.ap-south-1.amazonaws.com/my-cicd-app:${BUILD_NUMBER}"
         AWS_CREDENTIALS_ID = "aws-credentials"
-        DEPLOY_SERVER_IP   = "13.204.53.118"
+        DEPLOY_SERVER_IP   = "13.127.32.167"
     }
 
     stages {
@@ -57,7 +57,7 @@ pipeline {
                     sh """
                         ssh -o StrictHostKeyChecking=no \
                             -i /var/jenkins_home/.ssh/jenkins_deploy_key \
-                            ubuntu@13.204.53.118 '
+                            ubuntu@${DEPLOY_SERVER_IP}  '
 
                             export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
                             export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
